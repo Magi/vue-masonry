@@ -1,9 +1,6 @@
 import Masonry from 'masonry-layout'
 import ImageLoaded from 'imagesloaded'
 
-// Vue 3 Global API changed: nextTick import
-import { nextTick } from 'vue';
-
 const attributesMap = {
   'column-width': 'columnWidth',
   'transition-duration': 'transitionDuration',
@@ -67,11 +64,6 @@ export class VueMasonryPlugin {
           masonry.reloadItems()
           masonry.layout()
         }
-
-        // Updated nextTick method
-        nextTick(() => {
-          masonryDraw()
-        })
 
         const masonryRedrawHandler = function (eventData) {
           masonryDraw()
